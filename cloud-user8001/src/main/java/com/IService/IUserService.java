@@ -4,5 +4,6 @@ import com.entity.TblUser;
 
 
 public interface IUserService {
-    void insertUser(TblUser user);
+    int insertUser(TblUser user);
+    TblUser selectUserByAccount(String account);
 }

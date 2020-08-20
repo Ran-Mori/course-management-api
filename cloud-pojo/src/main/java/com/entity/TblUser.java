@@ -23,11 +23,9 @@ public class TblUser implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    private BigDecimal account;
+    private String account;
 
     private String password;
 
     private String passwordSalt;
-
-
 }
