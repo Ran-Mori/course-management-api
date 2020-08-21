@@ -1,11 +1,12 @@
 package com.constant;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class CommonResult {
     private String code;
     private String message;
-    private Map<String,Object> data;
+    private Map<String,Object> data=new HashMap<String, Object>();
 
     public static CommonResult success(){
         CommonResult commonResult=new CommonResult();
@@ -24,6 +25,15 @@ public class CommonResult {
         commonResult.setCode(errorCode.getCode());
         commonResult.setMessage(errorCode.getMessage());
         return commonResult;
+    }
+
+    public CommonResult(String code, String message, Map<String, Object> data) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
+    }
+
+    public CommonResult() {
     }
 
     public String getCode() {

@@ -1,0 +1,6 @@
+com\controller\UserController.class
+com\CloudUser8001.class
+com\IService\IUserService.class
+com\shiroRealm\UserRealm.class
+com\config\ShiroConfig.class
+com\service\UserService.class

@@ -26,7 +26,7 @@ public class TblCourse implements Serializable {
 
     private String name;
 
-    private Integer type;
+    private String type;
 
     private String teacher;
 

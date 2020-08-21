@@ -1,6 +1,6 @@
-package com.Controller;
+package com.controller;
 
-import com.Service.UserService;
+import com.service.UserService;
 import com.constant.CommonResult;
 import com.constant.ErrorCode;
 import com.entity.TblUser;
