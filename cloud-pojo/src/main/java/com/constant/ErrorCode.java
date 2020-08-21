@@ -5,6 +5,7 @@ public enum ErrorCode {
     REQUEST_NULL("T001","请求域为空或不存在"),
     INSERT_ERROR("T002","数据库inset新增错误"),
     SELECT_ERROR("t003","数据库查询错误"),
+    PARSE_REQUEST_ERROR("T004","解析请求域参数失败"),
 
     ACCOUNT_ILL("U001","用户名必须是13位整数"),
     PASSWORD_ILL("U002","密码过于简单"),
