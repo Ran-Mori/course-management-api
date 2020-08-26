@@ -77,7 +77,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/user/login",method = RequestMethod.GET)
+    @RequestMapping(value = "/user/login",method = RequestMethod.POST)
     public CommonResult login(@RequestBody Map<String,Object> data){
 
         //获取用户名和密码

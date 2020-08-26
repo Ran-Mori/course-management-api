@@ -24,13 +24,13 @@ public class TblCourseTime implements Serializable {
 
     private Integer courseId;
 
-    private String weekday;
+    private Integer weekday;
 
     private Integer beginWeek;
 
     private Integer endWeek;
 
-    private String beginTime;
+    private Integer beginTime;
 
-    private String endTime;
+    private Integer endTime;
 }
