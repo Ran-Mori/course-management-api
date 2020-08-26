@@ -12,7 +12,7 @@
 | 字段名称      | 键   | 数据类型    | 是否允许为空 | 注释 |
 | ------------- | ---- | ----------- | ------------ | ---- |
 | id            | 主键 | int         | false        |      |
-| account       |      | decimal(13) | false        |      |
+| account       |      | varchar(64) | false        |      |
 | password      |      | varchar(64) | false        |      |
 | password_salt |      | varchar(64) | false        |      |
 
@@ -25,7 +25,7 @@
 | id       | 主键 | int         | false        |      |
 | user_id  | 外键 | int         | false        |      |
 | name     |      | varchar(64) | false        |      |
-| type     |      | string      | false        |      |
+| type     |      | varchar(64) | false        |      |
 | teacher  |      | varchar(64) | false        |      |
 | location |      | varchar(64) | false        |      |
 
@@ -37,11 +37,11 @@
 | ---------- | ---- | -------- | ------------ | ---- |
 | id         | 主键 | Int      | false        |      |
 | course_id  | 外键 | int      | false        |      |
-| weekday    |      | string   | false        |      |
+| weekday    |      | tinyint  | false        |      |
 | begin_week |      | tinyint  | fasle        |      |
 | end_week   |      | tinyint  | fasle        |      |
-| begin_time |      | string   | false        |      |
-| end_time   |      | string   | false        |      |
+| begin_time |      | tinyint  | false        |      |
+| end_time   |      | tinyint  | false        |      |
 
 
 
@@ -107,7 +107,7 @@
 | ------- | ------------------------------ |
 | 接口URL | http://47.113.97.26/user/login |
 | 描述    | 用户登录                       |
-| 方法    | GET                            |
+| 方法    | POST                           |
 
 
 
@@ -172,8 +172,8 @@
 | location  | string | true     |      |
 | beginWeek | int    | true     |      |
 | endWeek   | int    | true     |      |
-| beginTime | string | true     |      |
-| endTime   | string | true     |      |
+| beginTime | int    | true     |      |
+| endTime   | int    | true     |      |
 
 ```json
 {
@@ -188,16 +188,16 @@
         {
            "beginWeek": 1,
            "endWeek": 17,
-           "weekday": "星期三",
-           "beginTime": "第六节",
-           "endTime":"第八节"
+           "weekday": 3,
+           "beginTime": 6,
+           "endTime":8
         },
         {
             "beginWeek": 1,
             "endWeek": 17,
-            "weekday": "星期五",
-            "beginTime": "第一节",
-            "endTime": "第三节"
+            "weekday": 5,
+            "beginTime": 1,
+            "endTime": 3
         }
     ]
 }
@@ -245,32 +245,6 @@
 {
     "userId": 13
 }
-
-{
-    "course": {
-        "userId": 2,
-        "name": "高等数学",
-        "type": "公共必修",
-        "teacher": "jxy",
-        "location": "3-1-304"
-    },
-    "courseTimes": [
-        {
-           "beginWeek": 1,
-           "endWeek": 17,
-           "weekday": "星期三",
-           "beginTime": "第六节",
-           "endTime":"第八节"
-        },
-        {
-            "beginWeek": 1,
-            "endWeek": 17,
-            "weekday": "星期五",
-            "beginTime": "第一节",
-            "endTime": "第三节"
-        }
-    ]
-}
 ```
 
 
@@ -304,18 +278,18 @@
                         "courseId": 13,
                         "beginWeek": 1,
                         "endWeek": 17,
-                        "weekday": "星期三",
-                        "beginTime": "第六节",
-                        "endTime":"第八节"
+                        "weekday": 3,
+                        "beginTime": 6,
+                        "endTime":8
                     },
                     {
                         "id": 2,
                         "courseId": 13,
                         "beginWeek": 1,
                         "endWeek": 17,
-                        "weekday": "星期五",
-                        "beginTime": "第一节",
-                        "endTime":"第三节"
+                        "weekday": 5,
+                        "beginTime": 1,
+                        "endTime":3
                     }
                 ]
             }
